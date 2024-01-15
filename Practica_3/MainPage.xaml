@@ -32,7 +32,7 @@
                     <Label Text="GRANDE" Grid.Column="3" Grid.Row="2" Padding="-60,4,0,0" TextColor="Black"></Label>
                 </Grid>
                 <Button Text="CRITICAR" Clicked="Criticar"></Button>
-                <Entry x:Name="Resultado" IsReadOnly="True"></Entry>
+                <Editor x:Name="Resultado" IsReadOnly="True" AutoSize="TextChanges" ></Editor>
             </StackLayout>
         </Frame>
     </StackLayout>
