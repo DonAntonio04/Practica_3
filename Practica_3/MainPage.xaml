@@ -13,8 +13,8 @@
         <Frame BackgroundColor="Transparent">
             <StackLayout>
                 <Grid Margin="0,0,0,40">
-                    <RadioButton Grid.Row="0" Grid.Column="0" Content="Hombre" ></RadioButton>
-                    <RadioButton Content="Mujer" Grid.Row="0" Grid.Column="1" ></RadioButton>
+                    <RadioButton Grid.Row="0" Grid.Column="0" Content="Hombre" x:Name="Hombre"></RadioButton>
+                    <RadioButton Content="Mujer" Grid.Row="0" Grid.Column="1" x:Name="Mujer" ></RadioButton>
                 </Grid>
 
                 <Grid>
@@ -32,7 +32,7 @@
                     <Label Text="GRANDE" Grid.Column="3" Grid.Row="2" Padding="-60,4,0,0" TextColor="Black"></Label>
                 </Grid>
                 <Button Text="CRITICAR" Clicked="Criticar"></Button>
-                <Entry x:Name="Resultado" IsEnabled="True"></Entry>
+                <Entry x:Name="Resultado" IsReadOnly="True"></Entry>
             </StackLayout>
         </Frame>
     </StackLayout>

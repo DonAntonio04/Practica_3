@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -16,36 +17,84 @@ namespace Practica_3
         }
         private void Criticar(object sender, EventArgs e)
         {
-            string nombre = Nombre.Text;
-
             string opciones = "";
+            string nombre = Nombre.Text;
+            string genero = "";
 
-            if(Alto.IsChecked)
+            if (Hombre.IsChecked)
             {
-                opciones += "Alto,";
+                genero = "Hombre";
+                if (Alto.IsChecked)
+                {
+                    opciones += ", Alto";
+                }
+                if (Feo.IsChecked)
+                {
+                    opciones += ", Feo";
+                }
+                if (Listo.IsChecked)
+                {
+                    opciones += ", Listo";
+                }
+                if (Extravagante.IsChecked)
+                {
+                    opciones += ", Extravagante";
+                }
+                if (Raro.IsChecked)
+                {
+                    opciones += ", Raro";
+                }
+                if (Grande.IsChecked)
+                {
+                    opciones += ", Grande";
+                }
             }
-             if(Feo.IsChecked)
+            if (Mujer.IsChecked)
             {
-                opciones += "Feo,";
+                genero = "Mujer";
+
+                if (Alto.IsChecked)
+                {
+                    opciones += ", Alta";
+
+                }
+                if (Feo.IsChecked)
+                {
+                    opciones += ", Fea";
+                }
+                if (Listo.IsChecked)
+                {
+                    opciones += ", Lista";
+                }
+                if (Extravagante.IsChecked)
+                {
+                    opciones += ", Extravagante";
+                }
+
+                if (Raro.IsChecked)
+                {
+                    opciones += ", Rara";
+                }
+                if (Grande.IsChecked)
+                {
+                    opciones += ", Grande";
+                }
+
             }
-             if(Listo.IsChecked)
+            if (opciones == null || opciones == "")
             {
-                opciones += "Listo,";
+                opciones = opciones.Substring(2);
+
             }
-             if(Extravagante.IsChecked)
+            opciones = opciones.Replace(",", ",");
+            int index = opciones.LastIndexOf(',');
+            if (index != -1)
             {
-                opciones += "Extravagante,";
+                opciones = opciones.Remove(index, 1).Insert(index, " y");
             }
-             if(Raro.IsChecked)
-            {
-                opciones += "Raro,";
-            }
-             if (Grande.IsChecked)
-            {
-                opciones += "Grande,";
-            }
-          
-            string mensaje = $"{nombre} es  {opciones}";
+
+            string mensaje = $"{nombre} es {genero}{opciones}.";
+
             Resultado.Text = mensaje;
         }
     }
