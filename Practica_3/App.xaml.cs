@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practica_3.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace Practica_3
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Critografo();
         }
 
         protected override void OnStart()

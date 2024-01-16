@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Practica_3.ModelView
 {
-    public class BaseViewModel: INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public INavigation Navigation;
 
@@ -89,4 +89,5 @@ namespace Practica_3.ModelView
 
             OnPropertyChanged(propertyName);
         }
+    }
 }

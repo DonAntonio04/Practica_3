@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Practica_3.ModelView
@@ -9,7 +10,8 @@ namespace Practica_3.ModelView
      {
         #region VARIABLES
         public string _Mensaje;
-        public string _Nombre
+        public string _Nombre;
+        public string _Resultado;
         public bool _Hombre;
         public bool _Mujer;
         public bool _Alto;
@@ -35,6 +37,11 @@ namespace Practica_3.ModelView
         {
             get { return _Nombre; }
             set { SetValue(ref _Nombre, value);}
+        }
+        public string Resultado
+        {
+            get { return _Resultado; }
+            set {  SetValue(ref _Resultado, value);}
         }
           public bool Hombre
         {
@@ -91,8 +98,69 @@ namespace Practica_3.ModelView
                 {
                     opciones += ", Alto";
                 }
+                if(Feo == true)
+                {
+                    opciones += ", Feo";
+                }
+                if(Listo == true)
+                {
+                    opciones += ", Listo";
+                }
+                if(Extravagante == true)
+                {
+                    opciones += ", Extravagante";
+                }
+                if(Raro == true)
+                {
+                    opciones += ", Raro";
+                }
+                if(Grande == true)
+                {
+                    opciones += ", Grande";
+                }
             }
+            if (Mujer == true)
+            {
+                genero = "Mujer";
+                if (Alto == true)
+                {
+                    opciones += ", Alta";
+                }
+                if (Feo == true)
+                {
+                    opciones += ", Fea";
+                }
+                if (Listo == true)
+                {
+                    opciones += ", Lista";
+                }
+                if (Extravagante == true)
+                {
+                    opciones += ", Extravagante";
+                }
+                if (Raro == true)
+                {
+                    opciones += ", Rara";
+                }
+                if (Grande == true)
+                {
+                    opciones += ", Grande";
+                }
+
+            }
+            if (opciones == null || opciones == "")
+            {
+                opciones = opciones.Substring(2);
+
+            }
+
+            string mensaje = $"{Nombre} es {genero}{opciones}.";
+
+            Resultado = mensaje;
         }
+        #endregion
+        #region COMANDOS
+        public ICommand CalcularOpcionescommand => new Command(Opciones);
         #endregion
     }
 }

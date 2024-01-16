@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_3.View.Critografo">
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="CRITOGRAFO" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="NOMBRE:" TextColor="Black" Padding="80,0,80,0"></Label>
+        <Entry Placeholder="" Margin="30,0,30,0" x:Name="Nombre" Text="{Binding Nombre}"></Entry>
+        <Label Text="GENERO:" TextColor="Black" Padding="30,0,30,0"></Label>
+        <Frame BackgroundColor="Transparent">
+            <StackLayout>
+                <Grid Margin="0,0,0,40">
+                    <RadioButton Grid.Row="0" Grid.Column="0" Content="Hombre" x:Name="Hombre" IsChecked="{Binding Hombre}"></RadioButton>
+                    <RadioButton Content="Mujer" Grid.Row="0" Grid.Column="1" x:Name="Mujer" IsChecked="{Binding Mujer}"></RadioButton>
+                </Grid>
+
+                <Grid>
+                    <CheckBox Grid.Row="0" Grid.Column="0" Color="Blue" x:Name="Alto" IsChecked="{Binding Alto}" ></CheckBox>
+                    <Label Text="ALTO/A" Grid.Column="1" Grid.Row="0" TextColor="Black" Padding="-60,5,0,0"></Label>
+                    <CheckBox Grid.Row="0" Grid.Column="2" Color="Blue" x:Name="Feo" IsChecked="{Binding Feo}"></CheckBox>
+                    <Label Text="FEO/A" Grid.Column="3" Grid.Row="0" TextColor="Black" Padding="-60,5,0,0"></Label>
+                    <CheckBox Grid.Row="1" Grid.Column="0" Color="Blue" x:Name="Listo" IsChecked="{Binding Listo}"></CheckBox>
+                    <Label Text="LISTO/A" Grid.Column="1" Grid.Row="1" Padding="-60,5,0,0" TextColor="Black"></Label>
+                    <CheckBox Grid.Row="1" Grid.Column="2" Color="Blue" x:Name="Extravagante" IsChecked="{Binding Extravagante}"></CheckBox>
+                    <Label Text="EXTRAVAGANTE" Grid.Column="3" Grid.Row="1" Padding="-60,5,0,0" TextColor="Black"></Label>
+                    <CheckBox Grid.Row="2" Grid.Column="0" Color="Blue" x:Name="Raro" IsChecked="{Binding Raro}"></CheckBox>
+                    <Label Text="RARO/A" Grid.Row="2" Grid.Column="1" Padding="-60,5,0,0" TextColor="Black"></Label>
+                    <CheckBox Grid.Column="2" Grid.Row="2" Color="Blue" x:Name="Grande" IsChecked="{Binding Grande}"></CheckBox>
+                    <Label Text="GRANDE" Grid.Column="3" Grid.Row="2" Padding="-60,4,0,0" TextColor="Black"></Label>
+                </Grid>
+                <Button Text="CRITICAR" Command="{Binding CalcularOpcionescommand}"></Button>
+                <Editor x:Name="Resultado" IsReadOnly="True" AutoSize="TextChanges" Text="{Binding Resultado}"></Editor>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
